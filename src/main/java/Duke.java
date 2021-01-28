@@ -22,7 +22,10 @@ public class Duke {
             } else if (word.contains("done")) {
                 String strArray[] = word.split(" ");
                 int value =Integer.parseInt(strArray[1]);
-                list.get(value - 1).markAsDone();
+                Task complete = list.get(value - 1);
+                complete.markAsDone();
+                System.out.println("Nice! I've marked this task as done: ");
+                System.out.println(complete.toString());
             } else {
                 Task t = new Task(word);
                 list.add(t);
